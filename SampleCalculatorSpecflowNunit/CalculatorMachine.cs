@@ -13,7 +13,7 @@ namespace SampleCalculatorSpecflowNunit
         public int CalculateSum()
         {
             int sum;
-            sum = a * b;
+            sum = a + b;
             return sum; 
         }
     }
