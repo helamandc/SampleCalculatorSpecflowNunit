@@ -23,13 +23,20 @@ namespace SampleCalculatorSpecflowNunit.StepDefinitions
         [When(@"the two numbers are added")]
         public void WhenTheTwoNumbersAreAdded()
         {
-            machine.CalculateSum();
+            machine.Calculate("+");
         }
 
         [Then(@"the result should be (.*)")]
-        public void ThenTheResultShouldBe(int sum)
+        public void ThenTheResultShouldBe(int result)
         {
-            Assert.AreEqual(sum, machine.CalculateSum());
+            Assert.AreEqual(result, machine.res);
         }
+
+        [When(@"the two numbers are multiplied")]
+        public void WhenTheTwoNumbersAreMultiplied()
+        {
+            machine.Calculate("*");
+        }
+
     }
 }

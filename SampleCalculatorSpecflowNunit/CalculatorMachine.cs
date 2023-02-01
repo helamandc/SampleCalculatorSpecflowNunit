@@ -8,13 +8,24 @@ namespace SampleCalculatorSpecflowNunit
 {
     public class CalculatorMachine
     {
+        public int res { get; set; }
         public int a;
         public int b;
-        public int CalculateSum()
+        public int Calculate(string sign)
         {
-            int sum;
-            sum = a + b;
-            return sum; 
+            int result;
+            switch (sign)
+            {
+                case "+":
+                    result = a + b;
+                    res = result;
+                    break;
+                case "*":
+                    result = a * b;
+                    res = result;
+                    break;
+            }
+            return res;
         }
     }
 }
